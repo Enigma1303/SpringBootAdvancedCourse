@@ -1,4 +1,12 @@
 -- Insert company data
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE jobs;
+TRUNCATE TABLE companies;
+TRUNCATE TABLE roles;
+TRUNCATE TABLE users;
+TRUNCATE TABLE contacts;
+SET FOREIGN_KEY_CHECKS = 1;
+
 INSERT INTO companies (name, logo, industry, size, rating, locations, founded, description, employees, website, created_by) VALUES ('TechCorp Inc.', '/logos/techcorp.png', 'Technology', 'Large', 4.5, 'San Francisco,New York,Austin', 2010, 'TechCorp Inc. is a leading technology company founded in 2010. We''re committed to innovation and creating exceptional experiences for our customers and employees.', 15000, 'https://www.techcorpinc.com', 'SYSTEM');
 
 INSERT INTO companies (name, logo, industry, size, rating, locations, founded, description, employees, website, created_by) VALUES ('Google', '/logos/google.png', 'Technology', 'Large', 4.4, 'Mountain View,New York,Seattle', 1998, 'Google is a leading technology company founded in 1998. We''re committed to innovation and creating exceptional experiences for our customers and employees.', 156000, 'https://www.google.com', 'SYSTEM');

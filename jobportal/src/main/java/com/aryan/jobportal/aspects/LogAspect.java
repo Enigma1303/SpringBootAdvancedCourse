@@ -1,4 +1,4 @@
-package com.eazybytes.jobportal.aspects;
+package com.aryan.jobportal.aspects;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

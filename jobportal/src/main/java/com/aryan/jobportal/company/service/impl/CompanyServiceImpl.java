@@ -1,6 +1,7 @@
 package com.aryan.jobportal.company.service.impl;
 
 import com.aryan.jobportal.company.service.ICompanyService;
+import com.aryan.jobportal.constants.ApplicationConstants;
 import com.aryan.jobportal.dto.CompanyDto;
 import com.aryan.jobportal.dto.JobDto;
 import com.aryan.jobportal.entity.Company;
@@ -21,7 +22,7 @@ public class CompanyServiceImpl implements ICompanyService {
 
     @Override
     public List<CompanyDto> getAllCompanies() {
-        List<Company> companyList =companyRepository.findAll();
+        List<Company> companyList =companyRepository.findAllWithJobsByStatusNative(ApplicationConstants.ACTIVE_STATUS);
         return companyList.stream().map(this::transformCompanyToDto).collect(Collectors.toList());
     }
 

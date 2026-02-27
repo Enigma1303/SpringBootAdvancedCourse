@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.SQLRestriction;
+
 @Entity
 @Table(name = "COMPANIES")
 @Getter
@@ -51,6 +54,8 @@ public class Company extends BaseEntity {
     private String website;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @BatchSize(size=10)
+    @SQLRestriction("status ='ACTIVE'")
     private List<Job> jobs = new ArrayList<>();
 
 }
